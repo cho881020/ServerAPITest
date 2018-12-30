@@ -7,6 +7,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
+
 public class SignUpActivity extends BaseActivity {
 
 
@@ -64,6 +68,12 @@ public class SignUpActivity extends BaseActivity {
                     Toast.makeText(mContext, "비밀번호가 서로 다릅니다.", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                OkHttpClient client = new OkHttpClient();
+
+                RequestBody requestBody = new FormBody.Builder()
+                        .add("user_id", userIdEdt.getText().toString())
+                        .add("password", )
 
 
 
