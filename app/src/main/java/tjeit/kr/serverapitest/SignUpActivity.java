@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.security.MessageDigest;
 
@@ -107,7 +110,23 @@ public class SignUpActivity extends BaseActivity {
 
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
-                        Log.d("회원가입리스폰스", response.body().string());
+                        String responseBody = response.body().string();
+                        Log.d("회원가입리스폰스", responseBody);
+
+                        try {
+                            JSONObject root = new JSONObject(responseBody);
+                            int code = root.getInt("code");
+                            String message = root.getString("message");
+
+                            Log.d("회원가입리스폰스", "코드 : " + code);
+                            Log.d("회원가입리스폰스", "메세지 : " + message);
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
                     }
                 });
 
