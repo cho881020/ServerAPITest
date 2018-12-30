@@ -9,13 +9,14 @@ import android.widget.Toast;
 
 public class SignUpActivity extends BaseActivity {
 
-    private android.widget.EditText userIdEdt;
-    private android.widget.EditText userPwEdt;
-    private android.widget.ImageView userPwCheckEdt;
-    private android.widget.EditText userNameEdt;
-    private android.widget.EditText userEmailEdt;
-    private android.widget.EditText userPhoneEdt;
-    private android.widget.Button signUpBtn;
+
+    private EditText userIdEdt;
+    private EditText userPwEdt;
+    private EditText userPwCheckEdt;
+    private EditText userNameEdt;
+    private EditText userEmailEdt;
+    private EditText userPhoneEdt;
+    private Button signUpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +40,27 @@ public class SignUpActivity extends BaseActivity {
                     return;
                 }
 
-//                1. 아이디는 반드시 8글자 이상
+//                1. 아이디는 반드시 6글자 이상
+
+                if (userIdEdt.getText().toString().length() < 6) {
+                    Toast.makeText(mContext, "아이디는 6글자 이상이어야 합니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 
 //                2. 비밀번호도 8글자 이상
 
+                if (userPwEdt.getText().toString().length() < 8) {
+                    Toast.makeText(mContext, "비밀번호는 8글자 이상이어야 합니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 //                3. 비밀번호와 다시입력한 비밀번호가 같아야함.
+
+                if (!userPwEdt.getText().toString().equals(userPwCheckEdt.getText().toString())) {
+                    Toast.makeText(mContext, "비밀번호가 서로 다릅니다.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
 
 
@@ -64,7 +81,7 @@ public class SignUpActivity extends BaseActivity {
         this.userPhoneEdt = (EditText) findViewById(R.id.userPhoneEdt);
         this.userEmailEdt = (EditText) findViewById(R.id.userEmailEdt);
         this.userNameEdt = (EditText) findViewById(R.id.userNameEdt);
-        this.userPwCheckEdt = (ImageView) findViewById(R.id.userPwCheckEdt);
+        this.userPwCheckEdt = (EditText) findViewById(R.id.userPwCheckEdt);
         this.userPwEdt = (EditText) findViewById(R.id.userPwEdt);
         this.userIdEdt = (EditText) findViewById(R.id.userIdEdt);
     }

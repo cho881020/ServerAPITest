@@ -73,7 +73,6 @@
                 android:inputType="textEmailAddress"/>
 
             <ImageView
-                android:id="@+id/userPwCheckEdt"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:layout_width="16dp"
@@ -87,6 +86,7 @@
             android:layout_height="wrap_content">
 
             <EditText
+                android:id="@+id/userPwCheckEdt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="비밀번호를 다시 입력하세요."
@@ -144,12 +144,3 @@
 
 
 </LinearLayout>
-
-
-
-
-
-
-
-
-
