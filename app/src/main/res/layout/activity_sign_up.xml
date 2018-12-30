@@ -46,6 +46,7 @@
             android:layout_height="wrap_content">
 
             <EditText
+                android:id="@+id/userIdEdt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="아이디를 입력하세요."
@@ -65,12 +66,14 @@
             android:layout_height="wrap_content">
 
             <EditText
+                android:id="@+id/userPwEdt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="비밀번호를 입력하세요."
                 android:inputType="textEmailAddress"/>
 
             <ImageView
+                android:id="@+id/userPwCheckEdt"
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginRight="10dp"
                 android:layout_width="16dp"
@@ -98,7 +101,32 @@
 
         </FrameLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="고객 정보"/>
+
+        <EditText
+            android:id="@+id/userNameEdt"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이름 입력"/>
+        <EditText
+            android:id="@+id/userEmailEdt"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이메일 입력"/>
+        <EditText
+            android:id="@+id/userPhoneEdt"
+            android:inputType="phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="연락처 입력(010-1234-5678)"/>
+
     </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,10 +134,11 @@
         android:layout_weight="1"/>
 
     <Button
+        android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:background="@color/tomato"
-        android:text="다음"
+        android:text="회원가입"
         android:textColor="@color/white"
         android:textSize="16sp"/>
 
